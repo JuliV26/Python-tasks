@@ -1,4 +1,5 @@
 class Text:
+
     def __init__(self, text):
         self.text=text
     def print_statistics(self):
@@ -8,7 +9,8 @@ class Text:
             if word.endswith(('.', '!', '?')):
                 sentence_count += 1
         print(f"Number of sentences: {sentence_count}")
-        unique_words=set(self.text.lower().split())
+        text = self.text.replace(",", "").replace(".", "").replace("!", "").replace("?", "")
+        unique_words=set(text.lower().split())
         print(f"Number of unique words: {len(unique_words)}")
 
 
@@ -17,6 +19,8 @@ class Text:
         word_count={}
        
         for word in text.split():
+             #Проверява дали думата вече съществува като ключ в нашия речник word_count.
+             #Ако вече сме я виждали (например вторият път, когато срещнем "ябълка"), увеличаваме брояча ѝ с 1.
             if word in word_count:
                 word_count[word]+=1
             else:
