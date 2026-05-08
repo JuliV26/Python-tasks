@@ -19,8 +19,7 @@ class Text:
         word_count={}
        
         for word in text.split():
-             #Проверява дали думата вече съществува като ключ в нашия речник word_count.
-             #Ако вече сме я виждали (например вторият път, когато срещнем "ябълка"), увеличаваме брояча ѝ с 1.
+             
             if word in word_count:
                 word_count[word]+=1
             else:
